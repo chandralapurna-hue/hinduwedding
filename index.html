@@ -165,10 +165,11 @@
 
       .kol-motif {
         position: absolute;
-        top: 20px;
-        right: 24px;
-        width: 120px;
-        opacity: 0.85;
+        top: 10px;
+        left: 50%;
+        width: clamp(90px, 18vw, 150px);
+        transform: translateX(-50%);
+        opacity: 0.88;
         pointer-events: none;
       }
 
@@ -399,9 +400,8 @@
         }
 
         .kol-motif {
-          width: 90px;
-          top: 16px;
-          right: 16px;
+          width: clamp(70px, 24vw, 110px);
+          top: 6px;
         }
 
         .pill {
@@ -428,8 +428,8 @@
     <div class="page">
       <div class="blessing left">శ్రీరస్తు</div>
       <div class="blessing right">శుభమస్తు</div>
+      <img class="kol-motif" src="kol.jpg" alt="" aria-hidden="true" />
       <section class="hero">
-        <img class="kol-motif" src="kol.jpg" alt="" aria-hidden="true" />
         <div>
           <span class="pill">Wedding Celebration</span>
           <h1>Purna & Mohamed</h1>
