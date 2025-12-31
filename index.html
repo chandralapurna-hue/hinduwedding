@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Purna & Mohamed — Wedding Invitation</title>
+    <title>Purna & Mohamed - Wedding Invitation</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap");
 
@@ -17,6 +17,8 @@
         --marigold: #e0a31a;
         --vermillion: #c6462e;
         --teal: #3c7a70;
+        --leaf: #4f7a3a;
+        --leaf-light: #7fb069;
         --shadow: rgba(27, 18, 10, 0.12);
       }
 
@@ -53,7 +55,9 @@
         gap: 28px;
         padding: 48px 36px;
         border-radius: 28px;
-        background: rgba(255, 255, 255, 0.78);
+        background:
+          radial-gradient(200px 120px at 90% 0%, rgba(224, 163, 26, 0.16), transparent 60%),
+          rgba(255, 255, 255, 0.82);
         box-shadow: 0 24px 60px var(--shadow);
         position: relative;
         overflow: hidden;
@@ -129,11 +133,14 @@
         margin: 8px 0 0;
         display: grid;
         gap: 8px;
-        justify-items: start;
+        justify-items: center;
+        text-align: center;
       }
 
       .bapu-figure img {
+        display: block;
         width: min(100%, 420px);
+        margin: 0 auto;
         border-radius: 18px;
         border: 2px solid rgba(182, 71, 28, 0.2);
         box-shadow: 0 12px 30px rgba(27, 18, 10, 0.15);
@@ -193,8 +200,9 @@
         gap: 8px;
         padding: 8px 14px;
         border-radius: 999px;
-        background: var(--teal);
-        color: #fff;
+        background: var(--marigold);
+        color: #3b2a1a;
+        border: 1px solid rgba(182, 71, 28, 0.25);
         font-size: 0.85rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -206,6 +214,50 @@
         gap: 24px;
         animation: slideUp 0.9s ease both;
         animation-delay: 0.2s;
+      }
+
+      .rsvp-layout {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        padding: 28px;
+        border-radius: 22px;
+        background:
+          linear-gradient(90deg, rgba(182, 71, 28, 0.18), rgba(182, 71, 28, 0.18))
+            top/100% 3px no-repeat,
+          linear-gradient(90deg, rgba(224, 163, 26, 0.3), rgba(224, 163, 26, 0.3))
+            bottom/100% 3px no-repeat,
+          #fff6e8;
+        border: 1px solid rgba(182, 71, 28, 0.18);
+        box-shadow: 0 16px 40px rgba(27, 18, 10, 0.08);
+        position: relative;
+      }
+
+      .rsvp-layout::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        bottom: 24px;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-1px);
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(182, 71, 28, 0.25),
+          transparent
+        );
+      }
+
+      .rsvp-info {
+        display: grid;
+        gap: 16px;
+        align-content: start;
+        padding-right: 8px;
+      }
+
+      .rsvp-form {
+        padding-left: 8px;
       }
 
       form {
@@ -290,6 +342,29 @@
         color: rgba(31, 27, 22, 0.7);
       }
 
+      .toran {
+        margin: 6px 0 18px;
+        color: var(--leaf);
+      }
+
+      .toran svg {
+        width: 100%;
+        height: 42px;
+        display: block;
+      }
+
+      .toran .string {
+        fill: var(--leaf);
+      }
+
+      .toran .leaf {
+        fill: var(--leaf-light);
+      }
+
+      .toran .bud {
+        fill: var(--vermillion);
+      }
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -320,11 +395,50 @@
         .pill {
           font-size: 0.75rem;
         }
+
+        .rsvp-layout {
+          grid-template-columns: 1fr;
+          padding: 22px;
+        }
+
+        .rsvp-layout::before {
+          display: none;
+        }
+
+        .rsvp-info,
+        .rsvp-form {
+          padding: 0;
+        }
       }
     </style>
   </head>
   <body>
     <div class="page">
+      <div class="toran" aria-hidden="true">
+        <svg viewBox="0 0 600 42" preserveAspectRatio="none">
+          <rect class="string" x="0" y="18" width="600" height="4" rx="2" />
+          <g>
+            <path class="leaf" d="M18 32 C6 26 4 12 12 6 C22 10 30 20 30 28 C28 31 24 33 18 32 Z" />
+            <path class="leaf" d="M58 32 C46 26 44 12 52 6 C62 10 70 20 70 28 C68 31 64 33 58 32 Z" />
+            <path class="leaf" d="M98 32 C86 26 84 12 92 6 C102 10 110 20 110 28 C108 31 104 33 98 32 Z" />
+            <path class="leaf" d="M138 32 C126 26 124 12 132 6 C142 10 150 20 150 28 C148 31 144 33 138 32 Z" />
+            <path class="leaf" d="M178 32 C166 26 164 12 172 6 C182 10 190 20 190 28 C188 31 184 33 178 32 Z" />
+            <path class="leaf" d="M218 32 C206 26 204 12 212 6 C222 10 230 20 230 28 C228 31 224 33 218 32 Z" />
+            <path class="leaf" d="M258 32 C246 26 244 12 252 6 C262 10 270 20 270 28 C268 31 264 33 258 32 Z" />
+            <path class="leaf" d="M298 32 C286 26 284 12 292 6 C302 10 310 20 310 28 C308 31 304 33 298 32 Z" />
+            <path class="leaf" d="M338 32 C326 26 324 12 332 6 C342 10 350 20 350 28 C348 31 344 33 338 32 Z" />
+            <path class="leaf" d="M378 32 C366 26 364 12 372 6 C382 10 390 20 390 28 C388 31 384 33 378 32 Z" />
+            <path class="leaf" d="M418 32 C406 26 404 12 412 6 C422 10 430 20 430 28 C428 31 424 33 418 32 Z" />
+            <path class="leaf" d="M458 32 C446 26 444 12 452 6 C462 10 470 20 470 28 C468 31 464 33 458 32 Z" />
+            <path class="leaf" d="M498 32 C486 26 484 12 492 6 C502 10 510 20 510 28 C508 31 504 33 498 32 Z" />
+            <path class="leaf" d="M538 32 C526 26 524 12 532 6 C542 10 550 20 550 28 C548 31 544 33 538 32 Z" />
+            <path class="leaf" d="M578 32 C566 26 564 12 572 6 C582 10 590 20 590 28 C588 31 584 33 578 32 Z" />
+          </g>
+          <circle class="bud" cx="100" cy="18" r="3" />
+          <circle class="bud" cx="300" cy="18" r="3" />
+          <circle class="bud" cx="500" cy="18" r="3" />
+        </svg>
+      </div>
       <section class="hero">
         <div>
           <span class="pill">Wedding Celebration</span>
@@ -345,7 +459,7 @@
             You are warmly invited to celebrate Purna and Mohamed's Hindu wedding in Munich.
           </p>
           <figure class="bapu-figure">
-            <img src="bapu-wedding.jpg" alt="Bapu-inspired wedding illustration" />
+            <img src="assets/bapu-wedding.jpg" alt="Bapu-inspired wedding illustration" />
           </figure>
         </div>
 
@@ -387,88 +501,94 @@
       </section>
 
       <section class="form-section">
-        <h2>RSVP & Guest Details</h2>
-        <div class="rsvp-note">
-          Please share your details and RSVP by <strong>03.01.2026</strong> so we can
-          confirm catering. Accommodation in Munich will be provided for everyone.
-        </div>
-
-        <form action="https://formspree.io/f/xojqpond" method="POST" id="rsvp-form">
-          <input type="hidden" name="_subject" value="Wedding RSVP — Purna & Mohamed" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <div class="form-grid">
-            <div>
-              <label for="name">Guest Name</label>
-              <input id="name" name="name" type="text" placeholder="Your full name" required />
-            </div>
-            <div>
-              <label for="email">Email or Phone</label>
-              <input
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Best contact"
-                required
-                pattern="^(([^@\s]+@[^@\s]+\.[^@\s]+)|(\+?[0-9][0-9\s().-]{6,}))$"
-                title="Enter a valid email or phone number"
-              />
-            </div>
-            <div>
-              <label for="attendance">Attendance</label>
-              <select id="attendance" name="attendance" required>
-                <option value="">Select one</option>
-                <option value="both-days">Attending both days</option>
-                <option value="feb21">Attending Feb 21 only</option>
-                <option value="feb22">Attending Feb 22 only</option>
-                <option value="not-attending">Unable to attend</option>
-              </select>
+        <div class="rsvp-layout">
+          <div class="rsvp-info">
+            <h2>RSVP & Guest Details</h2>
+            <div class="rsvp-note">
+              Please share your details and RSVP by <strong>03.01.2026</strong> so we can
+              confirm catering. Accommodation in Munich will be provided for everyone.
             </div>
           </div>
 
-          <div class="form-grid">
-            <div>
-              <label for="food">Food Preferences</label>
-              <select id="food" name="food" required>
-                <option value="">Select preference</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="meat">Meat based (chicken/lamb)</option>
-                <option value="other">Other (please specify)</option>
-              </select>
+          <div class="rsvp-form">
+            <form action="https://formspree.io/f/xojqpond" method="POST" id="rsvp-form">
+              <input type="hidden" name="_subject" value="Wedding RSVP - Purna & Mohamed" />
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+              <div class="form-grid">
+                <div>
+                  <label for="name">Guest Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your full name" required />
+                </div>
+                <div>
+                  <label for="email">Email or Phone</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    placeholder="Best contact"
+                    required
+                    pattern="^(([^@\s]+@[^@\s]+\.[^@\s]+)|(\+?[0-9][0-9\s().-]{6,}))$"
+                    title="Enter a valid email or phone number"
+                  />
+                </div>
+                <div>
+                  <label for="attendance">Attendance</label>
+                  <select id="attendance" name="attendance" required>
+                    <option value="">Select one</option>
+                    <option value="both-days">Attending both days</option>
+                    <option value="feb21">Attending Feb 21 only</option>
+                    <option value="feb22">Attending Feb 22 only</option>
+                    <option value="not-attending">Unable to attend</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label for="food">Food Preferences</label>
+                  <select id="food" name="food" required>
+                    <option value="">Select preference</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="meat">Meat based (chicken/lamb)</option>
+                    <option value="other">Other (please specify)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="arrival">Arrival in Munich</label>
+                  <input
+                    id="arrival"
+                    name="arrival"
+                    type="text"
+                    placeholder="Date + approximate time"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="allergies">Allergies or Dietary Notes</label>
+                <textarea
+                  id="allergies"
+                  name="allergies"
+                  placeholder="Tell us about any allergies or special considerations"
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="message">Message for the Couple</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Optional message for Purna and Mohamed"
+                ></textarea>
+              </div>
+
+              <button class="button" type="submit">Send RSVP</button>
+            </form>
+            <div class="success" id="rsvp-success">
+              Thank you! Your RSVP has been sent. We will follow up with venue details soon.
             </div>
-            <div>
-              <label for="arrival">Arrival in Munich</label>
-              <input
-                id="arrival"
-                name="arrival"
-                type="text"
-                placeholder="Date + approximate time"
-                required
-              />
-            </div>
           </div>
-
-          <div>
-            <label for="allergies">Allergies or Dietary Notes</label>
-            <textarea
-              id="allergies"
-              name="allergies"
-              placeholder="Tell us about any allergies or special considerations"
-            ></textarea>
-          </div>
-
-          <div>
-            <label for="message">Message for the Couple</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Optional message for Purna and Mohamed"
-            ></textarea>
-          </div>
-
-          <button class="button" type="submit">Send RSVP</button>
-        </form>
-        <div class="success" id="rsvp-success">
-          Thank you! Your RSVP has been sent. We will follow up with venue details soon.
         </div>
       </section>
 
@@ -507,3 +627,6 @@
     </script>
   </body>
 </html>
+
+
+
