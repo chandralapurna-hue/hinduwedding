@@ -485,8 +485,8 @@
           <div class="rsvp-info">
             <h2>RSVP & Guest Details</h2>
             <div class="rsvp-note">
-              Please share your details and RSVP by <strong>05.01.2026</strong> so we can
-              confirm catering. Accommodation in Munich will be provided for everyone
+              Please share your details and RSVP by <strong>03.01.2026</strong> so we can
+              confirm catering. Accommodation in Munich will be provided for everyone.
             </div>
           </div>
 
@@ -500,15 +500,14 @@
                   <input id="name" name="name" type="text" placeholder="Your full name" required />
                 </div>
                 <div>
-                  <label for="email">Email or Phone</label>
+                  <label for="phone">Phone Number (optional)</label>
                   <input
-                    id="email"
-                    name="email"
-                    type="text"
-                    placeholder="Best contact"
-                    required
-                    pattern="^(([^@\s]+@[^@\s]+\.[^@\s]+)|(\+?[0-9][0-9\s().-]{6,}))$"
-                    title="Enter a valid email or phone number"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone number"
+                    pattern="^\+?[0-9][0-9\s().-]{6,}$"
+                    title="Enter a valid phone number"
                   />
                 </div>
                 <div>
@@ -534,14 +533,24 @@
                   </select>
                 </div>
                 <div>
-                  <label for="arrival">Arrival in Munich</label>
-                  <input
-                    id="arrival"
-                    name="arrival"
-                    type="text"
-                    placeholder="Date + approximate time"
-                    required
-                  />
+                  <label for="arrival-date">Arrival in Munich</label>
+                  <select id="arrival-date" name="arrival_date" required>
+                    <option value="">Select date</option>
+                    <option value="feb20">Feb 20, 2026</option>
+                    <option value="feb21">Feb 21, 2026</option>
+                    <option value="feb22">Feb 22, 2026</option>
+                    <option value="other">Other (add in message)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="arrival-time">Arrival Time</label>
+                  <select id="arrival-time" name="arrival_time" required>
+                    <option value="">Select time</option>
+                    <option value="morning">Morning (6am-12pm)</option>
+                    <option value="afternoon">Afternoon (12pm-5pm)</option>
+                    <option value="evening">Evening (5pm-9pm)</option>
+                    <option value="late">Late night (after 9pm)</option>
+                  </select>
                 </div>
               </div>
 
