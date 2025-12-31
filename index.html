@@ -40,6 +40,25 @@
         max-width: 1100px;
         margin: 0 auto;
         padding: 48px 20px 80px;
+        position: relative;
+      }
+
+      .blessing {
+        position: absolute;
+        top: 12px;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
+        color: var(--burnt);
+        text-transform: uppercase;
+      }
+
+      .blessing.left {
+        left: 20px;
+      }
+
+      .blessing.right {
+        right: 20px;
       }
 
       .hero {
@@ -371,6 +390,14 @@
           padding: 36px 22px;
         }
 
+        .blessing {
+          position: static;
+          display: block;
+          text-align: center;
+          margin-bottom: 6px;
+          letter-spacing: 0.05em;
+        }
+
         .kol-motif {
           width: 90px;
           top: 16px;
@@ -399,6 +426,8 @@
   </head>
   <body>
     <div class="page">
+      <div class="blessing left">శ్రీరస్తు</div>
+      <div class="blessing right">శుభమస్తు</div>
       <section class="hero">
         <img class="kol-motif" src="kol.jpg" alt="" aria-hidden="true" />
         <div>
